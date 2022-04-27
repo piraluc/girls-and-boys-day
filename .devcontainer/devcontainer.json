@@ -14,7 +14,7 @@
 
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": ["ms-vscode-remote.remote-wsl", "ms-vscode-remote.remote-containers"],
+	"extensions": ["maziac.asm-code-lens", "ms-vscode-remote.remote-containers"],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
