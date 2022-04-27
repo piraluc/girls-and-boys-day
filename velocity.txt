@@ -1,0 +1,5 @@
+FLOPS
+Spaceship Computer (Apollo):          12.000
+Smart phone:                 800.000.000.000
+
+65m x faster
