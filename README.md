@@ -11,7 +11,7 @@
 2. Clone the repo
 
 ```
-git clone https://github.com/piraluc/girls-and-boys-day.git
+> git clone https://github.com/piraluc/girls-and-boys-day.git
 ```
 3. Open Visual Studio Code
 4. Open the folder `girls-and-boys-day` in Visual Studio Code
@@ -19,7 +19,9 @@ git clone https://github.com/piraluc/girls-and-boys-day.git
 6. (Optional) Open Terminal in Visual Studio Code `View -> Terminal`
 
 ## Compile the program
-```gcc -o hello_world hello_world.c```
+```
+> gcc -o hello_world hello_world.c
+```
 ## Execute the program
 ```
 > ./hello_world
