@@ -1,9 +1,11 @@
 #include<stdio.h>
 
 int main(int argc, char *argv[]) {
-	int x = argv[1];
-	int y = argv[2];
+	// Convert the argument from characters to numbers
+	int x = charToInt(argv[1]);
+	int y = charToInt(argv[2]);
 
+	// Add the two numbers
 	int z = x + y;
 
 	printf("Hello %i\n", z);
