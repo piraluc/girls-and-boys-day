@@ -75,7 +75,7 @@ objdump -M intel -D calc | grep -A20 main.: > calc.s
 
 Take a look at the row that starts with `1170:` in `calc.s`
 
-```bash
+```asm
 0000000000001149 <main>:
     1149:	f3 0f 1e fa          	endbr64 
     114d:	55                   	push   rbp
