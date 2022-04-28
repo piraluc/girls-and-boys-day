@@ -74,29 +74,27 @@ Print the machine code
 objdump -M intel -D calc | grep -A20 main.: > calc.s
 ```
 
-Take a look at the row that starts with `1170:` in `calc.s`
+Take a look at the lines that starts with `1155:` and `115c:` in `calc.s`. There at the end we can find the two numbers `0x3` and `0x5` aka 3 and 5. And in line `1169` we see the `add` operation that means "+". In `117f:` the `printf` function is called.
 
 ```asm
 0000000000001149 <main>:
     1149:	f3 0f 1e fa          	endbr64 
     114d:	55                   	push   rbp
     114e:	48 89 e5             	mov    rbp,rsp
-    1151:	48 83 ec 20          	sub    rsp,0x20
-    1155:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi
-    1158:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
-    115c:	c7 45 f4 03 00 00 00 	mov    DWORD PTR [rbp-0xc],0x3
-    1163:	c7 45 f8 05 00 00 00 	mov    DWORD PTR [rbp-0x8],0x5
-    116a:	8b 55 f4             	mov    edx,DWORD PTR [rbp-0xc]
-    116d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
-    1170:	01 d0                	add    eax,edx
-    1172:	89 45 fc             	mov    DWORD PTR [rbp-0x4],eax
-    1175:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-    1178:	89 c6                	mov    esi,eax
-    117a:	48 8d 3d 83 0e 00 00 	lea    rdi,[rip+0xe83]        # 2004 <_IO_stdin_used+0x4>
-    1181:	b8 00 00 00 00       	mov    eax,0x0
-    1186:	e8 c5 fe ff ff       	call   1050 <printf@plt>
-    118b:	b8 00 00 00 00       	mov    eax,0x0
-    1190:	c9                   	leave  
-    1191:	c3                   	ret    
-
+    1151:	48 83 ec 10          	sub    rsp,0x10
+    1155:	c7 45 f4 03 00 00 00 	mov    DWORD PTR [rbp-0xc],0x3
+    115c:	c7 45 f8 05 00 00 00 	mov    DWORD PTR [rbp-0x8],0x5
+    1163:	8b 55 f4             	mov    edx,DWORD PTR [rbp-0xc]
+    1166:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+    1169:	01 d0                	add    eax,edx
+    116b:	89 45 fc             	mov    DWORD PTR [rbp-0x4],eax
+    116e:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+    1171:	89 c6                	mov    esi,eax
+    1173:	48 8d 3d 8a 0e 00 00 	lea    rdi,[rip+0xe8a]        # 2004 <_IO_stdin_used+0x4>
+    117a:	b8 00 00 00 00       	mov    eax,0x0
+    117f:	e8 cc fe ff ff       	call   1050 <printf@plt>
+    1184:	b8 00 00 00 00       	mov    eax,0x0
+    1189:	c9                   	leave
+    118a:	c3                   	ret
+    118b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
 ```

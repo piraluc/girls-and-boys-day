@@ -1,13 +1,22 @@
 #include<stdio.h>
 
-int main(int argc, char *argv[]) {
-	// Convert the two arguments from characters to numbers
-	int x = (long)argv[1];
-	int y = (long)argv[2];
+int main() {
+    int number_1;
+	int number_2;
+
+    printf("Enter first number: ");
+
+    // Reads and stores input for first number
+    scanf("%d", &number_1);
+
+	printf("Enter second number: ");
+
+    // Reads and stores input for first number
+    scanf("%d", &number_2);
 
 	// Add the two numbers
-	int z = x + y;
+	int result = number_1 + number_2;
 
-	printf("Hello %i\n", z);
+	printf("Result of add is: %d \n", result);
 	return 0;
 }
