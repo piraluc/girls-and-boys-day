@@ -65,6 +65,7 @@ Result is 8
 ```
 Where is the add operation exactly?
 ```C
+int a = 3, b = 5;
 int c = a + b;
 ```
 Print the machine code
